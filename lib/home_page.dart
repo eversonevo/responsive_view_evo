@@ -32,14 +32,22 @@ class HomePage extends GetView<Controller> {
            ),
            body: SizedBox(
              width: controller.widthMax,
+             height: controller.heigthMax,
              child: Column(
                children: [
-                     Container(
-                       width: controller.widthMax *.9, height: 200,color: Colors.blue,
-                       child: Center(child: Container(width: controller.widthMax * .8,height: 100,color: Colors.black,)),),                   
+                     Expanded(
+                       flex: 3,
+                       child: Container(
+                         width: controller.widthMax *.9, height: 200,color: Colors.blue,
+                         child: Padding(
+                           padding: const EdgeInsets.all(20.0),
+                           child: Container(width: controller.widthMax * .8,height: 100,color: Colors.black,
+                           child: Text('oolllaa',style: TextStyle(fontSize: controller.textSize,color: Colors.white),),),
+                         ),),
+                     ),                   
                  
-                 Container(width: controller.widthMax *.9,height: 200,color: Colors.red,),
-                 Container(width: controller.widthMax *.9,height: 200,color: Colors.green,),
+                 Expanded(flex: 3,child: Container(width: controller.widthMax *.9,height: 200,color: Colors.red,)),
+                 Expanded(flex: 3,child: Container(width: controller.widthMax *.9,height: 200,color: Colors.green,)),
                ],
              ),
            ),
